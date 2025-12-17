@@ -249,3 +249,31 @@
   .delay-500 { animation-delay: 500ms; }
   .delay-600 { animation-delay: 600ms; }
 }
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+ display: none;
+}
+
+/* Hover effect with a darker gradient */
+*::-webkit-scrollbar-thumb:hover {
+  display: none;
+}
+
+/* Hide scrollbar for GitHub contributions */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
