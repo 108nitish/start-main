@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google"
 import { AnimatedBackground } from "./components/AnimatedBackground";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 export const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" })
@@ -37,6 +38,7 @@ export default function RootLayout({
         <AnimatedBackground />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

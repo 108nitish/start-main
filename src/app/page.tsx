@@ -21,6 +21,7 @@ import WhyUsSection from './components/WhyUsSection';
 import ProcessSection from './components/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import TechStackSection from './components/TechStackSection';
+import CTASection from './components/CTASection';
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
        <ProcessSection />
        <TestimonialsSection />
        <TechStackSection />
+       <CTASection />
     </div>
   );
 }
