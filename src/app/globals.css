@@ -74,6 +74,12 @@
   }
 
   body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
