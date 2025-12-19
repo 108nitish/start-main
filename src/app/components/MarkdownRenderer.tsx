@@ -1,29 +1,24 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useEffect, useState, CSSProperties } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface MarkdownRendererProps {
   slug: string;
 }
 
 const MarkdownRenderer = ({ slug }: MarkdownRendererProps) => {
-  // console.log('Rendering MarkdownRenderer for slug:', slug);  
   const [markdown, setMarkdown] = useState('');
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState('');
 
   useEffect(() => {
-    // console.log(`Fetching markdown for slug: ${slug}`);
     if (!slug) return;
     fetch(`/${slug}.md`)
       .then(res => res.text())
       .then(text => {
-        // console.log(`Loaded markdown for ${slug}:`, text);
         setMarkdown(text);
         const match = text.match(/^#\s(.+)/);
         if (match) {
@@ -84,18 +79,8 @@ const MarkdownRenderer = ({ slug }: MarkdownRendererProps) => {
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              code({ node, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || '');
-                return match ? (
-                  <SyntaxHighlighter
-                    style={{ ...vscDarkPlus } as { [key: string]: CSSProperties }}
-                    language={match[1]}
-                    PreTag="div"
-                    {...props}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
-                ) : (
+              code({ className, children, ...props }) {
+                return (
                   <code className={className} {...props}>
                     {children}
                   </code>
