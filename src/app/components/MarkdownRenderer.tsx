@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { useEffect, useState, CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
