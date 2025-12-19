@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative mt-24 flex items-center justify-center overflow-hidden">
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
