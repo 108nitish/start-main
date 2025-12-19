@@ -1,7 +1,5 @@
-"use client";
-
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -88,7 +86,7 @@ const MarkdownRenderer = ({ slug }: MarkdownRendererProps) => {
                 const match = /language-(\w+)/.exec(className || '');
                 return match ? (
                   <SyntaxHighlighter
-                    style={vscDarkPlus}
+                    style={vscDarkPlus as { [key: string]: CSSProperties }}
                     language={match[1]}
                     PreTag="div"
                     {...props}
