@@ -88,7 +88,7 @@ const MarkdownRenderer = ({ slug }: MarkdownRendererProps) => {
                 const match = /language-(\w+)/.exec(className || '');
                 return match ? (
                   <SyntaxHighlighter
-                    style={vscDarkPlus as { [key: string]: CSSProperties }}
+                    style={{ ...vscDarkPlus } as { [key: string]: CSSProperties }}
                     language={match[1]}
                     PreTag="div"
                     {...props}
